@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - 'v*.*.*'   # triggers on tags like v1.0.0, v1.2.3
+      - 'v*.*.*'
 
 jobs:
   release:
@@ -29,11 +29,16 @@ jobs:
         run: >
           dotnet publish Gradual/Gradual.csproj
           --configuration Release
+          --framework net8.0-windows
           --runtime win-x64
           --self-contained true
           -p:PublishSingleFile=true
           -p:IncludeNativeLibrariesForSelfExtract=true
           --output ./publish
+
+      - name: Copy appsettings.json to publish folder
+        run: Copy-Item Gradual/appsettings.json ./publish/appsettings.json
+        shell: pwsh
 
       - name: Zip release
         run: Compress-Archive -Path ./publish/* -DestinationPath ./Gradual-${{ github.ref_name }}-win-x64.zip
@@ -46,13 +51,16 @@ jobs:
           body: |
             ## Gradual ${{ github.ref_name }}
 
-            ### What's included
-            - Self-contained Windows x64 executable — no .NET install required
-            - All business logic, GitHub integration, analytics, and audit features
-
             ### Installation
-            1. Download and extract `Gradual-${{ github.ref_name }}-win-x64.zip`
-            2. Run `Gradual.exe`
+            1. Download `Gradual-${{ github.ref_name }}-win-x64.zip`
+            2. Extract anywhere
+            3. Run `Gradual.exe` — no .NET install required
+
+            ### What's included
+            - Self-contained Windows x64 executable
+            - GitHub integration, analytics, audit trail, milestone & budget tracking
           files: Gradual-${{ github.ref_name }}-win-x64.zip
           draft: false
           prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
