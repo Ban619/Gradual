@@ -1,0 +1,44 @@
+# Build output
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+
+# NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Runtime data
+logs/
+data/
+*.db
+*.db-shm
+*.db-wal
+analytics.json
+startup-error.log
+
+# Temp scripts
+gradual_script_*.ps1
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.idea/
+*.swp
+*~
+
+# Python cache (IdentifierEn module)
+__pycache__/
+*.pyc
+*.pyo

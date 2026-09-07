@@ -1,0 +1,58 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'   # triggers on tags like v1.0.0, v1.2.3
+
+jobs:
+  release:
+    name: Create Release
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 8
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore Gradual/Gradual.csproj
+
+      - name: Build Release
+        run: dotnet build Gradual/Gradual.csproj --configuration Release --no-restore
+
+      - name: Publish self-contained executable
+        run: >
+          dotnet publish Gradual/Gradual.csproj
+          --configuration Release
+          --runtime win-x64
+          --self-contained true
+          -p:PublishSingleFile=true
+          -p:IncludeNativeLibrariesForSelfExtract=true
+          --output ./publish
+
+      - name: Zip release
+        run: Compress-Archive -Path ./publish/* -DestinationPath ./Gradual-${{ github.ref_name }}-win-x64.zip
+        shell: pwsh
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "Gradual ${{ github.ref_name }}"
+          body: |
+            ## Gradual ${{ github.ref_name }}
+
+            ### What's included
+            - Self-contained Windows x64 executable — no .NET install required
+            - All business logic, GitHub integration, analytics, and audit features
+
+            ### Installation
+            1. Download and extract `Gradual-${{ github.ref_name }}-win-x64.zip`
+            2. Run `Gradual.exe`
+          files: Gradual-${{ github.ref_name }}-win-x64.zip
+          draft: false
+          prerelease: false
