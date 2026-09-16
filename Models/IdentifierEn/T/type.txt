@@ -1,0 +1,259 @@
+# FronTime PMS - File Type Database
+# This file serves as the reference database for file type validation
+# Format: CATEGORY|extension|description
+
+# ============================================================================
+# ACCEPTED FILE TYPES (Programming & System Building)
+# ============================================================================
+
+[ACCEPTED_CODE]
+# Programming Language Source Files
+CODE|.cs|C# Source Code
+CODE|.py|Python Script
+CODE|.cpp|C++ Source Code
+CODE|.c|C Source Code
+CODE|.h|C Header File
+CODE|.hpp|C++ Header File
+CODE|.java|Java Source Code
+CODE|.js|JavaScript File
+CODE|.ts|TypeScript File
+CODE|.jsx|React JSX Component
+CODE|.tsx|React TypeScript Component
+CODE|.go|Go Source File
+CODE|.rs|Rust Source File
+CODE|.rb|Ruby Script
+CODE|.php|PHP Script
+CODE|.swift|Swift Source Code
+CODE|.kt|Kotlin Source File
+CODE|.scala|Scala Source File
+CODE|.r|R Script
+CODE|.m|Objective-C/MATLAB File
+CODE|.vb|Visual Basic File
+CODE|.fs|F# Source File
+CODE|.clj|Clojure Source File
+CODE|.erl|Erlang Source File
+CODE|.ex|Elixir Source File
+CODE|.elm|Elm Source File
+CODE|.dart|Dart Source File
+CODE|.lua|Lua Script
+CODE|.perl|Perl Script
+CODE|.pl|Perl Script
+CODE|.sh|Shell Script
+CODE|.bash|Bash Script
+CODE|.ps1|PowerShell Script
+CODE|.bat|Batch File
+CODE|.cmd|Command File
+
+[ACCEPTED_CONFIG]
+# Configuration and Build Files
+CONFIG|.json|JSON Configuration
+CONFIG|.xml|XML Configuration
+CONFIG|.yaml|YAML Configuration
+CONFIG|.yml|YAML Configuration
+CONFIG|.toml|TOML Configuration
+CONFIG|.ini|INI Configuration
+CONFIG|.config|Configuration File
+CONFIG|.props|MSBuild Properties
+CONFIG|.targets|MSBuild Targets
+CONFIG|.csproj|C# Project File
+CONFIG|.vcxproj|Visual C++ Project
+CONFIG|.sln|Visual Studio Solution
+CONFIG|.gradle|Gradle Build Script
+CONFIG|.maven|Maven Configuration
+CONFIG|.pom|Maven POM File
+CONFIG|.cmake|CMake Script
+CONFIG|.makefile|Makefile
+CONFIG|.dockerfile|Dockerfile
+
+[ACCEPTED_MARKERS]
+# Project Marker Files (exact names, case-insensitive)
+MARKER|package.json|Node.js Package Definition
+MARKER|requirements.txt|Python Requirements
+MARKER|setup.py|Python Setup Script
+MARKER|cargo.toml|Rust Cargo Config
+MARKER|go.mod|Go Module Definition
+MARKER|pom.xml|Maven Project Object Model
+MARKER|build.gradle|Gradle Build Script
+MARKER|composer.json|PHP Composer Config
+MARKER|gemfile|Ruby Gem Config
+MARKER|makefile|Make Build Instructions
+MARKER|dockerfile|Docker Container Config
+MARKER|docker-compose.yml|Docker Compose Config
+MARKER|cmakelists.txt|CMake Configuration
+MARKER|.gitignore|Git Ignore Rules
+MARKER|readme.md|Project Documentation
+MARKER|license|License File
+MARKER|.editorconfig|Editor Configuration
+
+[ACCEPTED_WEB]
+# Web Development Files
+WEB|.html|HTML Document
+WEB|.htm|HTML Document
+WEB|.css|Stylesheet
+WEB|.scss|SASS Stylesheet
+WEB|.sass|SASS Stylesheet
+WEB|.less|LESS Stylesheet
+WEB|.vue|Vue Component
+WEB|.svelte|Svelte Component
+
+[ACCEPTED_DATA]
+# Data and Database Files (OK if part of project)
+DATA|.sql|SQL Script
+DATA|.db|SQLite Database
+DATA|.sqlite|SQLite Database
+DATA|.csv|CSV Data File
+DATA|.tsv|TSV Data File
+DATA|.env|Environment Variables
+DATA|.properties|Properties File
+
+# ============================================================================
+# REJECTED FILE TYPES (Media & Documents)
+# ============================================================================
+
+[REJECTED_IMAGES]
+# Image Files - REJECT if ONLY these exist
+IMAGE|.jpg|JPEG Image
+IMAGE|.jpeg|JPEG Image
+IMAGE|.png|PNG Image
+IMAGE|.gif|GIF Image
+IMAGE|.bmp|Bitmap Image
+IMAGE|.svg|SVG Vector Image
+IMAGE|.ico|Icon File
+IMAGE|.webp|WebP Image
+IMAGE|.tiff|TIFF Image
+IMAGE|.tif|TIFF Image
+IMAGE|.psd|Photoshop Document
+IMAGE|.ai|Adobe Illustrator File
+IMAGE|.eps|Encapsulated PostScript
+IMAGE|.raw|RAW Image
+IMAGE|.cr2|Canon RAW Image
+IMAGE|.nef|Nikon RAW Image
+
+[REJECTED_VIDEOS]
+# Video Files - REJECT if ONLY these exist
+VIDEO|.mp4|MPEG-4 Video
+VIDEO|.avi|AVI Video
+VIDEO|.mov|QuickTime Video
+VIDEO|.wmv|Windows Media Video
+VIDEO|.flv|Flash Video
+VIDEO|.mkv|Matroska Video
+VIDEO|.webm|WebM Video
+VIDEO|.m4v|MPEG-4 Video
+VIDEO|.mpg|MPEG Video
+VIDEO|.mpeg|MPEG Video
+VIDEO|.3gp|3GPP Video
+VIDEO|.ogv|Ogg Video
+
+[REJECTED_AUDIO]
+# Audio Files - REJECT if ONLY these exist
+AUDIO|.mp3|MP3 Audio
+AUDIO|.wav|WAV Audio
+AUDIO|.ogg|Ogg Audio
+AUDIO|.flac|FLAC Audio
+AUDIO|.aac|AAC Audio
+AUDIO|.m4a|MPEG-4 Audio
+AUDIO|.wma|Windows Media Audio
+AUDIO|.aiff|AIFF Audio
+AUDIO|.opus|Opus Audio
+AUDIO|.mid|MIDI File
+AUDIO|.midi|MIDI File
+
+[REJECTED_DOCUMENTS]
+# Document Files - REJECT if ONLY these exist
+DOCUMENT|.pdf|PDF Document
+DOCUMENT|.doc|Word Document
+DOCUMENT|.docx|Word Document
+DOCUMENT|.xls|Excel Spreadsheet
+DOCUMENT|.xlsx|Excel Spreadsheet
+DOCUMENT|.ppt|PowerPoint Presentation
+DOCUMENT|.pptx|PowerPoint Presentation
+DOCUMENT|.txt|Text File
+DOCUMENT|.rtf|Rich Text Format
+DOCUMENT|.odt|OpenDocument Text
+DOCUMENT|.ods|OpenDocument Spreadsheet
+DOCUMENT|.odp|OpenDocument Presentation
+DOCUMENT|.pages|Apple Pages Document
+DOCUMENT|.numbers|Apple Numbers Spreadsheet
+DOCUMENT|.keynote|Apple Keynote Presentation
+
+[REJECTED_ARCHIVES]
+# Archive Files - Usually not project indicators
+ARCHIVE|.zip|ZIP Archive
+ARCHIVE|.rar|RAR Archive
+ARCHIVE|.7z|7-Zip Archive
+ARCHIVE|.tar|TAR Archive
+ARCHIVE|.gz|GZip Archive
+ARCHIVE|.bz2|BZip2 Archive
+ARCHIVE|.iso|ISO Disc Image
+
+# ============================================================================
+# IGNORE FILE TYPES (System/Temp Files)
+# ============================================================================
+
+[IGNORED]
+# Temporary and System Files
+IGNORE|.tmp|Temporary File
+IGNORE|.temp|Temporary File
+IGNORE|.log|Log File
+IGNORE|.cache|Cache File
+IGNORE|.bak|Backup File
+IGNORE|.swp|Vim Swap File
+IGNORE|.swo|Vim Swap File
+IGNORE|.DS_Store|macOS Directory Store
+IGNORE|thumbs.db|Windows Thumbnail Database
+IGNORE|.gitkeep|Git Keep File
+IGNORE|desktop.ini|Windows Desktop Config
+IGNORE|~|Temporary Backup
+IGNORE|.user|Visual Studio User Settings
+IGNORE|.suo|Visual Studio Solution User Options
+
+# ============================================================================
+# VALIDATION RULES
+# ============================================================================
+
+[RULES]
+# If folder contains ANY [ACCEPTED_*] files = Potential valid project
+# If folder contains ONLY [REJECTED_*] files = REJECT immediately
+# If folder contains unknown/anonymous files = REJECT immediately
+# If folder contains mix of ACCEPTED + REJECTED = Analyze percentages
+# If folder has [ACCEPTED_MARKERS] = HIGH confidence valid project
+
+[THRESHOLDS]
+# Percentage thresholds for validation
+MIN_CODE_FILES=3
+MIN_PROGRAMMING_PERCENTAGE=30.0
+MAX_MEDIA_PERCENTAGE=80.0
+HIGH_CONFIDENCE_THRESHOLD=80
+MEDIUM_CONFIDENCE_THRESHOLD=50
+LOW_CONFIDENCE_THRESHOLD=30
+
+[SCAN_SETTINGS]
+# Scanning configuration
+MAX_SCAN_DEPTH=1
+MAX_FILES_TO_SCAN=10000
+SCAN_TIMEOUT_SECONDS=30
+ENABLE_SUBDIRECTORY_SCAN=true
+REJECT_EMPTY_DIRECTORIES=true
+
+# ============================================================================
+# ANONYMOUS FILE HANDLING
+# ============================================================================
+
+[ANONYMOUS_POLICY]
+# Policy for files not in database
+# OPTIONS: REJECT_ALL, ACCEPT_ALL, ANALYZE_BY_PARENT
+UNKNOWN_FILE_POLICY=REJECT_ALL
+# If ANALYZE_BY_PARENT: unknown files are OK if parent folder has valid code
+# If REJECT_ALL: any unknown extension triggers rejection
+# If ACCEPT_ALL: unknown files are treated as neutral (not recommended)
+
+# ============================================================================
+# DATABASE VERSION
+# ============================================================================
+
+[VERSION]
+DATABASE_VERSION=1.0
+LAST_UPDATED=2026-07-22
+TOTAL_ACCEPTED_TYPES=85
+TOTAL_REJECTED_TYPES=47
+TOTAL_IGNORED_TYPES=14
